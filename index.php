@@ -1,4 +1,5 @@
-<?php include 'data.php' ?>
+<?php #include 'data.php' 
+?>
 <!DOCTYPE html>
 <html lang="it">
 
@@ -17,22 +18,40 @@
 </head>
 
 <body>
-    <main>
-        <div id="container">
-            <?php
-            foreach ($arrDischi as $disco) { ?>
-                <div class="card">
-                    <img src="<?= $disco['poster'] ?>" alt="<?= $disco['titolo'] ?>">
+    <div id="app">
+        <main>
+            <div id="container">
+                <!-- ciclo foreach con php per generare le card con i dischi -->
+                <?/*php
+                foreach ($arrDischi as $disco) { ?>
+                    <div class="card">
+                        <img src="<?= $disco['poster'] ?>" alt="<?= $disco['titolo'] ?>">
+                        <div>
+                            <h2><?= $disco['titolo'] ?></h2>
+                            <div class="artista"><?= $disco['artista'] ?></div>
+                            <div class="anno"><?= $disco['anno'] ?></div>
+                        </div>
+                    </div><?php
+                        }
+                            */ ?>
+                <!-- ciclo v-for per generare le card -->
+                <div v-for="disco in arrDischi" class="card">
+                    <img :src="disco.poster" :alt="`Copertina ` + disco.titolo">
                     <div>
-                        <h2><?= $disco['titolo'] ?></h2>
-                        <div class="artista"><?= $disco['artista'] ?></div>
-                        <div class="anno"><?= $disco['anno'] ?></div>
+                        <h2>{{disco.titolo}}</h2>
+                        <div class="artista">{{disco.artista}}</div>
+                        <div class="anno">{{disco.anno}}</div>
                     </div>
-                </div><?php
-                    }
-                        ?>
-        </div>
-    </main>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- link allo script -->
+    <script src="script.js"></script>
 </body>
 
 </html>
