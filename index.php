@@ -25,10 +25,14 @@
                 <select>
                     <option value="">All</option>
                     <optgroup label="Genere">
-
+                        <option v-for="el in genres" :value="el.toLowerCase()">
+                            {{ el }}
+                        </option>
                     </optgroup>
                     <optgroup label="Artista">
-
+                        <option v-for="el in authors" :value="el.toLowerCase()">
+                            {{ el }}
+                        </option>
                     </optgroup>
 
                 </select>
