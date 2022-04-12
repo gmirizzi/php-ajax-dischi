@@ -70,5 +70,7 @@ $arrDischi = [
         'genere' => 'Hip pop',
         'anno' => '2017',
     ],
-]
+];
+header("Content-Type: application/json");
+echo json_encode($arrDischi);
 ?>
