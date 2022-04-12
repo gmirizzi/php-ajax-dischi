@@ -22,7 +22,7 @@
         <main>
             <header>
                 <img src="img/logo-spotify.png" alt="Logo Spotify" />
-                <select>
+                <select @change="filter" v-model="selectedFilter">
                     <option value="">All</option>
                     <optgroup label="Genere">
                         <option v-for="el in genres" :value="el.toLowerCase()">
@@ -52,7 +52,7 @@
                         }
                             */ ?>
                 <!-- ciclo v-for per generare le card -->
-                <div v-for="disco in arrDischi" class="card">
+                <div v-for="disco in filter" class="card">
                     <img :src="disco.poster" :alt="`Copertina ` + disco.titolo">
                     <div>
                         <h2>{{disco.titolo}}</h2>
