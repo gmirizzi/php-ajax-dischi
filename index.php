@@ -20,6 +20,19 @@
 <body>
     <div id="app">
         <main>
+            <header>
+                <img src="img/logo-spotify.png" alt="Logo Spotify" />
+                <select>
+                    <option value="">All</option>
+                    <optgroup label="Genere">
+
+                    </optgroup>
+                    <optgroup label="Artista">
+
+                    </optgroup>
+
+                </select>
+            </header>
             <div id="container">
                 <!-- ciclo foreach con php per generare le card con i dischi -->
                 <?/*php

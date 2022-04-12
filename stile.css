@@ -9,12 +9,24 @@
     font-family: 'Roboto', sans-serif;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: #2e3a46ff;
+}
+
+header img {
+    height: 50px;
+}
+
 main {
     background-color: #1e2d3bff;
-    padding: 2rem;
 }
 
 #container {
+    padding: 2rem;
     width: 80%;
     margin: 0 auto;
     display: flex;
